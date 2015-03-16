@@ -46,13 +46,6 @@
         @Html.DisplayFor(model => model.Blogger.Name)
     </div>
 </fieldset>
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    <p>
-        <input type="submit" value="Delete"  class="btn btn-success" /> |
-        @Html.ActionLink("Back to List", "Index", null, new {  @class="btn btn-success" })
-    </p>
-}
 
     </div>
 
