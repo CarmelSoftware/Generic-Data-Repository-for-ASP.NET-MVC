@@ -1,0 +1,52 @@
+@model GenericRepository.Models.Blog
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="jumbotron">
+<h2>Generic Data Repository - Details</h2><br /><h4>By Carmel Schvartzman</h4>
+</div>
+<div class="jumbotron">
+<fieldset>
+    <legend>Blog</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Text)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Text)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DatePosted)
+    </div>
+    <div class="display-field">
+        @String.Format("{0:yyyy-MM-dd}",Model.DatePosted.Value    )  
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MainPicture)
+    </div>
+    <div class="display-field">
+        <img src="/Content/Images/@Html.DisplayFor(model => model.MainPicture)"/>
+    </div>
+
+    <div class="display-label">
+         Blogger Name 
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Blogger.Name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BlogID }, new {  @class="btn btn-success" }) |
+    @Html.ActionLink("Back to List", "Index",null, new {  @class="btn btn-success" })
+</p>
+</div>
